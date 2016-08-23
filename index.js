@@ -13,7 +13,7 @@ router.get('/', function *(next) {
 // Put me in another file if you want
 const ExampleController  = {
   get: function *(next) {
-    const address = ['1600', 'Amphitheatre', 'Parkway', 'Mountain View', 'CA'].join('+');
+    const address = ['1600', 'Amphitheatre Parkway', 'Mountain View', 'CA'].join('+');
     const response = yield axios.get(`${API_URL}?address=${address}&key=${API_KEY}`);
     const lat = response.data.results[0].geometry.location.lat;
     const lng = response.data.results[0].geometry.location.lng;
