@@ -1,13 +1,13 @@
-import koa from 'koa';
+import Koa from 'koa';
 import Router from 'koa-router';
 
 import GeocodeController from './controllers/GeocodeController';
 
-const app = koa();
+const app = new Koa();
 const router = new Router();
 
-router.get('/', function *(next) {
-  this.body = 'koa-geocode';
+router.get('/', async(ctx, next) => {
+  ctx.body = 'koa-geocode';
 });
 
 router.get('/api/geocode', GeocodeController.geocode);
