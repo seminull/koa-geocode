@@ -7,7 +7,7 @@ const app = koa();
 const router = new Router();
 
 router.get('/', function *(next) {
-  this.body = 'koa-gecode';
+  this.body = 'koa-geocode';
 });
 
 router.get('/api/geocode', GeocodeController.geocode);
