@@ -8,6 +8,7 @@ const GeocodeController = {
     const response = await axios.get(`${API_URL}?address=${address}&key=${API_KEY}`);
     const lat = response.data.results[0].geometry.location.lat;
     const lng = response.data.results[0].geometry.location.lng;
+    console.log(ctx.request.body);
     ctx.body = `${lat} & ${lng}`;
   }
 }
